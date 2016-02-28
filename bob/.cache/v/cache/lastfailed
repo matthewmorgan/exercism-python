@@ -1,1 +1,11 @@
-{}
+{
+  "bob_test.py::BobTests::test_calmly_speaking_with_umlauts": true,
+  "bob_test.py::BobTests::test_only_numbers": true,
+  "bob_test.py::BobTests::test_prolonged_silence": true,
+  "bob_test.py::BobTests::test_silence": true,
+  "bob_test.py::BobTests::test_starts_with_whitespace": true,
+  "bob_test.py::BobTests::test_statement_containing_question_mark": true,
+  "bob_test.py::BobTests::test_stating_something": true,
+  "bob_test.py::BobTests::test_talking_forcefully": true,
+  "bob_test.py::BobTests::test_using_acronyms_in_regular_speech": true
+}
