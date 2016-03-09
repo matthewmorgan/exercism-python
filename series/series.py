@@ -1,9 +1,10 @@
 def slices(input_string, size):
-    first_index = 0
-    last_index = size
+    
     if size < 1 or size > len(input_string):
         raise ValueError
     
+    first_index = 0
+    last_index = size
     int_source = [int(x) for x in list(input_string)]
     result = []
     
