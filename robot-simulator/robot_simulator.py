@@ -1,3 +1,4 @@
+from _collections import OrderedDict
 [NORTH, EAST, SOUTH, WEST] = [1,2,3,4]
 
 class Robot:
@@ -27,14 +28,13 @@ class Robot:
             x += 1
         self.coordinates = (x, y)
     
+    def alter_coord(self, coord_index, delta):
+        self.coordinates[coord_index] += delta
+
     def simulate(self, moves):
+        possible_moves = {'L':self.turn_left, 'R':self.turn_right, 'A':self.advance}
         for move in moves:
-            if move == 'L':
-                self.turn_left()
-            elif move == 'R':
-                self.turn_right()
-            elif move == 'A':
-                self.advance()
+            possible_moves[move]()
 
     
     
