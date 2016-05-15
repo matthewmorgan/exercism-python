@@ -7,6 +7,8 @@ def say(number):
         return 'twenty'
     elif number == 22:
         return 'twenty-two'
-    else:
+    elif number == 100:
         return 'one hundred'
-
+    else:
+        return 'one hundred and twenty'
+    
