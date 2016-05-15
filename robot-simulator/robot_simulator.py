@@ -1,11 +1,11 @@
-from _collections import OrderedDict
-[NORTH, EAST, SOUTH, WEST] = [1,2,3,4]
+NORTH, EAST, SOUTH, WEST = 1,2,3,4
 
 class Robot:
     def __init__(self, bearing = NORTH, x = 0, y = 0):
         self.coordinates = (x,y)
         self.bearing = bearing
-    
+        self.possible_moves = {'L':self.turn_left, 'R':self.turn_right, 'A':self.advance}
+
     def turn_left(self):
         self.bearing = self.bearing - 1
         if self.bearing < NORTH:
@@ -27,14 +27,8 @@ class Robot:
         else:
             x += 1
         self.coordinates = (x, y)
-    
-    def alter_coord(self, coord_index, delta):
-        self.coordinates[coord_index] += delta
 
     def simulate(self, moves):
-        possible_moves = {'L':self.turn_left, 'R':self.turn_right, 'A':self.advance}
         for move in moves:
-            possible_moves[move]()
-
-    
+            self.possible_moves[move]()
     

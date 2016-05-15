@@ -1,13 +1,7 @@
 def detect_anagrams(word, candidates):
-    global sorted_word, original_word
-    original_word = word.lower()
-    sorted_word  = sort_word(word).lower()
-    return list(filter(is_anagram, candidates))
+    original = word.casefold()
+    letters  = sorted(original)
+    return [c for c in candidates if is_anagram(original, letters, c)]
 
-def is_anagram(candidate):
-    return sorted_word == sort_word(candidate) and not_original_word(candidate)
-
-def not_original_word(candidate):
-    return original_word != candidate.lower()
-
-sort_word = lambda word: ''.join(sorted(word.lower()))
+def is_anagram(original, letters, candidate): 
+    return letters == sorted(candidate.casefold()) and original != candidate.casefold()
