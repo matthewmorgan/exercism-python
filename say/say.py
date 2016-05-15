@@ -1,5 +1,7 @@
 def say(number):
     if number == 1:
         return 'one'
-    else:
+    elif number == 14:
         return 'fourteen'
+    else:
+        return 'twenty'
