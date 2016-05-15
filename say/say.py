@@ -5,6 +5,8 @@ def say(number):
         return 'fourteen'
     elif number == 20:
         return 'twenty'
-    else:
+    elif number == 22:
         return 'twenty-two'
-    
+    else:
+        return 'one hundred'
+
