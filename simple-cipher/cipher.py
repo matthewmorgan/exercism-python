@@ -7,6 +7,7 @@ ALPHA_LOWER_BOUND = 97
 ALPHA_UPPER_BOUND = 122
 ALPHABET_LENGTH = 26
 
+
 class Caesar:
     def encode(self, plain_text):
         return ''.join([shift(letter) for letter in plain_text])
