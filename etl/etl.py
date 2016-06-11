@@ -3,31 +3,19 @@ def transform(old):
 
 
 def format(pair_list):
-    updated = []
-    for pair in pair_list:
-        updated.append(pair.get_pair_with_lowercase_word())
-    return updated
+    return [pair.get_pair_with_lowercase_word() for pair in pair_list]
 
 
 def extract(old):
-    flattened = []
-    for score, word_list in old.items():
-        flattened.extend(split_into_pairs(score, word_list))
-    return flattened
+    return [sublist for (score, word_list) in old.items() for sublist in split_into_pairs(score, word_list)]
 
 
 def collect(flattened):
-    collected = {}
-    for pair in flattened:
-        collected[pair.get_word()] = pair.get_score()
-    return collected
+    return dict([([pair.get_word(), pair.get_score()]) for pair in flattened ])
 
 
 def split_into_pairs(score, word_list):
-    pair_list = []
-    for word in word_list:
-        pair_list.append(Pair(score, word))
-    return pair_list
+    return [Pair(score, word) for word in word_list]
 
 
 class Pair:
