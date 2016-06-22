@@ -1,21 +1,16 @@
 def sieve(limit):
-  p = 2
-  range = ()
-  primes = ()
-  for (let ii = 2; ii <= limit; ii++) {
-    range[ii] = {val: ii, prime: true};
-  }
-  ;
-  for (let ii = 2; ii <= limit / 2; ii++) {
-    for (let jj = 2 * p; jj <= limit; jj += p) {
-      range[jj].prime = false;
-    }
-    p++;
-  }
-  for (let key in range) {
-    range[key].prime ? primes.push(+key) : null;
-  }
-  return {
-    primes: primes
-  };
-};
+    p = 2
+    span = [False, False]
+    primes = []
+    for ii in range(2, limit + 1):
+        span.append(True)
+
+    for ii in range(2, int(limit / 2) + 1):
+        for jj in range(2 * p, limit + 1, p):
+            span[jj] = False
+        p += 1
+
+    for index, flag in enumerate(span):
+        if flag:
+            primes.append(index)
+    return primes
