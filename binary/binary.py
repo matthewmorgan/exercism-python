@@ -1,7 +1,7 @@
-from re import fullmatch
-
+INTS = { '0': 0, '1': 1 }
+BASE = 2
 
 def parse_binary(binary='0'):
-    if not fullmatch(r'[01]+', binary):
+    if set(binary).difference(set(INTS.keys())):
         raise ValueError()
-    return sum([2 ** p if b == '1' else 0 for p, b in enumerate(reversed(list(binary)))])
+    return sum([INTS[b]* BASE ** p for p, b in enumerate(reversed(list(binary)))])
