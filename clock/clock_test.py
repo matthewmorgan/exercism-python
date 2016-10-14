@@ -12,11 +12,9 @@ class ClockTest(unittest.TestCase):
     def test_past_the_hour(self):
         self.assertEqual('11:09', str(Clock(11, 9)))
 
-    @pytest.mark.skip(reason='ignore for now')
     def test_midnight_is_zero_hours(self):
         self.assertEqual('00:00', str(Clock(24, 0)))
 
-    @pytest.mark.skip(reason='ignore for now')
     def test_hour_rolls_over(self):
         self.assertEqual('01:00', str(Clock(25, 0)))
 
