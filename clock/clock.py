@@ -1,13 +1,10 @@
-import math
-
-
 class Clock():
     def __init__(self, h, m):
         self.normalize(h,m)
 
     def normalize(self, h, m):
         self.minutes = m + h * 60
-        self.hours = math.floor(self.minutes/60) % 24
+        self.hours = self.minutes // 60 % 24
         self.minutes %= 60
 
     def __str__(self):
