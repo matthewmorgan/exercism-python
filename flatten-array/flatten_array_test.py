@@ -5,8 +5,8 @@ from flatten_array import flatten
 
 class FlattenArrayTests(unittest.TestCase):
 
-    # def test_no_nesting(self):
-    #     self.assertEqual(flatten([0, 1, 2]), [0, 1, 2])
+    def test_no_nesting(self):
+        self.assertEqual(flatten([0, 1, 2]), [0, 1, 2])
 
     def test_one_level_nesting(self):
         self.assertEqual(flatten([0, [1], 2]), [0, 1, 2])
